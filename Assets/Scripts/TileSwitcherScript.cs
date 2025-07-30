@@ -30,14 +30,14 @@ public class TileSwitcherScript : MonoBehaviour
         }
     }
     
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            currentIndex = (currentIndex + 1) % tilemapObjects.Length;
-            EnableOnly(currentIndex);
-        }
-    }
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.A))
+    //     {
+    //         currentIndex = (currentIndex + 1) % tilemapObjects.Length;
+    //         EnableOnly(currentIndex);
+    //     }
+    // }
 
 	IEnumerator CountdownLoop()
     {
