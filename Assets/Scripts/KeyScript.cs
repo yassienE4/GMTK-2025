@@ -7,6 +7,11 @@ public class KeyScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.Instance.CollectKey();
+            GameHudScript hud = FindObjectOfType<GameHudScript>();
+            if (hud != null)
+            {
+                hud.UpdateKeysUI();
+            }
             Destroy(gameObject); // remove key after collecting
         }
     }

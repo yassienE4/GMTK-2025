@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public int totalKeys;
     private int keysCollected;
 
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -16,6 +17,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         keysCollected = 0;
+    }
+
+    public int getKeysLeft()
+    {
+        return totalKeys - keysCollected;
     }
 
     public void CollectKey()
