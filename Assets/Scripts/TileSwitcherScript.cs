@@ -1,14 +1,18 @@
 using UnityEngine;
+using System.Collections; // <-- This gives you IEnumerator
+
 
 
 public class TileSwitcherScript : MonoBehaviour
 {
     public GameObject[] tilemapObjects; // Drag Tilemap1, Tilemap2, ... here in order
     private int currentIndex = 0;
+	public float countdownTime = 10f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         EnableOnly(currentIndex);
+		StartCoroutine(CountdownLoop());
     }
     public void SwitchTo(int index)
     {
@@ -35,6 +39,27 @@ public class TileSwitcherScript : MonoBehaviour
         }
     }
 
+	IEnumerator CountdownLoop()
+    {
+        while (true)
+        {
+            float timer = countdownTime;
 
+            while (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                //Debug.Log("Time remaining: " + Mathf.CeilToInt(timer));
+                yield return null; // wait a frame
+            }
+
+            OnCountdownFinished();
+        }
+    }
+
+	void OnCountdownFinished()
+    {
+        currentIndex = (currentIndex + 1) % tilemapObjects.Length;
+        EnableOnly(currentIndex);
+    }
    
 }
