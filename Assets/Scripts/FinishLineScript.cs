@@ -6,8 +6,7 @@ public class FinishLineScript : MonoBehaviour
     {
         if (other.CompareTag("Player") && GameManager.Instance.AllKeysCollected())
         {
-            //Debug.Log("Level Complete!");
-            // Load next level or show win screen
+            Debug.Log("Level Complete!");
         }
         else if (other.CompareTag("Player"))
         {

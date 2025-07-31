@@ -23,7 +23,10 @@ public class PlayerBallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        //isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        Vector2 groundCheckPos = (Vector2)transform.position + Vector2.down * 0.6f; // adjust the offset
+        isGrounded = Physics2D.OverlapCircle(groundCheckPos, groundCheckRadius, groundLayer);
+        //Debug.Log(isGrounded);
         // Move left/right - using AddForce to conserve momentum
         float moveInput = Input.GetAxis("Horizontal");
         
@@ -41,13 +44,6 @@ public class PlayerBallController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-    }
-
-    bool IsGrounded()
-    {
-        // Simple raycast to check for ground
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
-        return hit.collider != null;
     }
     
     

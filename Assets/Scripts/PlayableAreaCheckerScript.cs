@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class PlayableAreaCheckerScript : MonoBehaviour
 {
@@ -15,9 +16,10 @@ public class PlayableAreaCheckerScript : MonoBehaviour
         if (!backgroundTilemaps[index].HasTile(tilePos))
         {
             outOfBoundsTime += Time.deltaTime;
-            if (outOfBoundsTime >= 1f)
+            if (outOfBoundsTime >= 0.3f)
             {
-                Debug.Log("out of bounds you died");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
             }
         }
         else
