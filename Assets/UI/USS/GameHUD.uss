@@ -14,27 +14,27 @@
 }
 
 #keys-image {
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     background-image: url("project://database/Assets/Sprites/key.png"); /* Change to your key image path */
     background-size: cover;
 }
 
 #keys-label {
     color: black;
-    font-size: 9px;
+    font-size: 18px;
     font-style: bold;
 }
 
 #keys-label2 {
     color: black;
-    font-size: 9px;
+    font-size: 18px;
     font-style: bold;
 }
 
 #timer-label {
     color: black;
-    font-size: 9px;
+    font-size: 18px;
     font-style: bold;
     padding: 6px 12px;
 

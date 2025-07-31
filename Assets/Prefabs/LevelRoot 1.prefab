@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
-  moveForce: 5
+  moveForce: 50
   maxSpeed: 10
   airControlMultiplier: 0.2
   groundCheck: {fileID: 634901939708186707}

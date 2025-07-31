@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerBallController : MonoBehaviour
 {
     public float jumpForce = 10f;
-    public float moveForce = 5f;
-    public float maxSpeed = 10f;
+    public float moveForce = 70f;
+    public float maxSpeed = 20f;
     public float airControlMultiplier = 0.2f;
     
     private Rigidbody2D rb;
@@ -21,30 +21,41 @@ public class PlayerBallController : MonoBehaviour
     }
 
     // Update is called once per frame
+    private float moveInput;
+    private bool jumpRequested;
+
     void Update()
     {
-        //isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        Vector2 groundCheckPos = (Vector2)transform.position + Vector2.down * 0.6f; // adjust the offset
+        // Get input in Update (input works best here)
+        moveInput = Input.GetAxis("Horizontal");
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            jumpRequested = true;
+        }
+
+        // Ground check
+        Vector2 groundCheckPos = (Vector2)transform.position + Vector2.down * 0.6f;
         isGrounded = Physics2D.OverlapCircle(groundCheckPos, groundCheckRadius, groundLayer);
-        //Debug.Log(isGrounded);
-        // Move left/right - using AddForce to conserve momentum
-        float moveInput = Input.GetAxis("Horizontal");
-        
-        // Apply different force based on whether we're grounded or in air
+    }
+
+    void FixedUpdate()
+    {
+        // Apply different force based on whether grounded or in air
         float currentMoveForce = isGrounded ? moveForce : moveForce * airControlMultiplier;
-        
-        // Only apply force if we haven't reached max speed in that direction
+
         if (Mathf.Abs(rb.linearVelocity.x) < maxSpeed)
         {
             rb.AddForce(moveInput * currentMoveForce * Vector2.right);
         }
 
-        // Jump - only when grounded
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (jumpRequested)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            jumpRequested = false;
         }
     }
+
     
     
 }
