@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelRoot 1
       objectReference: {fileID: 0}
+    - target: {fileID: 769955847151603728, guid: bcd0b283c9f2448b6b19229b3ed297e5, type: 3}
+      propertyPath: totalKeys
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1276692293242199846, guid: bcd0b283c9f2448b6b19229b3ed297e5, type: 3}
       propertyPath: 'backgroundTilemaps.Array.data[0]'
       value: 
