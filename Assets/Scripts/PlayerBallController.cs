@@ -24,7 +24,6 @@ public class PlayerBallController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        Debug.Log(isGrounded);
         // Move left/right - using AddForce to conserve momentum
         float moveInput = Input.GetAxis("Horizontal");
         
