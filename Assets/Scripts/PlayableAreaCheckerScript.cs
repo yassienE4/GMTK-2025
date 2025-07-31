@@ -7,6 +7,7 @@ public class PlayableAreaCheckerScript : MonoBehaviour
     [SerializeField] private Tilemap[] backgroundTilemaps;
     [SerializeField] private Transform ball;
     private float outOfBoundsTime = 0f;
+    public float timeToReset = 0.3f;
     public int index = 0;
 
     void Update()
@@ -16,7 +17,7 @@ public class PlayableAreaCheckerScript : MonoBehaviour
         if (!backgroundTilemaps[index].HasTile(tilePos))
         {
             outOfBoundsTime += Time.deltaTime;
-            if (outOfBoundsTime >= 0.3f)
+            if (outOfBoundsTime >= timeToReset)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
