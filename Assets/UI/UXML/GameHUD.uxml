@@ -12,9 +12,6 @@
             <ui:Image name="keys-image" />
             <ui:Label name="keys-label2" text="left" />
         </ui:VisualElement>
-
-        <!-- Timer Display -->
-        <ui:Label name="timer-label" text="00:30" />
         
     </ui:VisualElement>
 </ui:UXML>

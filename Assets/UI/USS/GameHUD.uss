@@ -32,10 +32,3 @@
     font-style: bold;
 }
 
-#timer-label {
-    color: black;
-    font-size: 18px;
-    font-style: bold;
-    padding: 6px 12px;
-
-}
