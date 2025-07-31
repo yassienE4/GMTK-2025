@@ -39,7 +39,7 @@ public class PlayerBallController : MonoBehaviour
     bool IsGrounded()
     {
         // Simple raycast to check for ground
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.6f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
         return hit.collider != null;
     }
     
