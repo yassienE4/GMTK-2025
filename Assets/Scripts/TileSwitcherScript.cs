@@ -7,7 +7,9 @@ public class TileSwitcherScript : MonoBehaviour
 {
     public GameObject[] tilemapObjects; // Drag Tilemap1, Tilemap2, ... here in order
     private int currentIndex = 0;
-	public float countdownTime = 10f;
+	public float countdownTime = 5f;
+    public static event System.Action OnCountdownFinishedEvent; // Event to notify when countdown finishes
+
     public float TimerRemaining { get; private set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,9 +60,15 @@ public class TileSwitcherScript : MonoBehaviour
         }
     }
 
+    int getCurrentIndex()
+    {
+        return currentIndex;
+    }
+
 	void OnCountdownFinished()
     {
         currentIndex = (currentIndex + 1) % tilemapObjects.Length;
+        OnCountdownFinishedEvent?.Invoke();
         EnableOnly(currentIndex);
     }
    
