@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &580498720 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1244849408091610765, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+  m_PrefabInstance: {fileID: 6518339758936289385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6518339758936289385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,9 +132,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1244849408091610765, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.061
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244849408091610765, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.588
+      objectReference: {fileID: 0}
     - target: {fileID: 2807657082856728819, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
       propertyPath: m_Name
       value: LevelRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843927272092879384, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3932449312379585491, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -170,6 +187,30 @@ PrefabInstance:
     - target: {fileID: 3932449312379585491, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373735051627194529, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: countdownTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868896071247025474, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 580498720}
+    - target: {fileID: 4868896071247025474, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: groundCheckRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868896071247025474, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223735240615542203, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721131242928487777, guid: 868c12cd829cf45f1a972e7cacad71e2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
