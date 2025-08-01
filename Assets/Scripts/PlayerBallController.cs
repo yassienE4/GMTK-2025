@@ -12,11 +12,15 @@ public class PlayerBallController : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 1f;
     public LayerMask groundLayer;
+    
+    public AudioClip jumpSound;
+    private AudioSource audioSource;
 
     private bool isGrounded;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -51,6 +55,7 @@ public class PlayerBallController : MonoBehaviour
 
         if (jumpRequested)
         {
+            audioSource.PlayOneShot(jumpSound);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jumpRequested = false;
         }
