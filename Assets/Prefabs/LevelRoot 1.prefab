@@ -72,9 +72,9 @@ RectTransform:
   - {fileID: 8203424927099511571}
   m_Father: {fileID: 1639578893384830777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -414, y: 292.74973}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 154, y: -194.25024}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7925057688160246248
@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc020af4fc771407391b3d448f68856c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileSwitcher: {fileID: 0}
   gameManager: {fileID: 0}
 --- !u!1 &932590704893127264
 GameObject:
@@ -239,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.119995, y: -28.00003}
+  m_AnchoredPosition: {x: 2.119995, y: -28}
   m_SizeDelta: {x: 38.843506, y: 41.546387}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8394591215896907705
@@ -849,7 +848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.119995, y: -28.00003}
+  m_AnchoredPosition: {x: 2.119995, y: -28}
   m_SizeDelta: {x: 38.843506, y: 41.546387}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2601365210761526629
