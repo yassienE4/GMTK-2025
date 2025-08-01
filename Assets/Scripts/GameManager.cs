@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 
     public int totalKeys;
     private int keysCollected;
+    public AudioClip collectSound;
+    private AudioSource audioSource;
 
 
     void Awake()
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         keysCollected = 0;
     }
 
@@ -26,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void CollectKey()
     {
+        audioSource.PlayOneShot(collectSound);
         keysCollected++;
         //Debug.Log($"Keys: {keysCollected}/{totalKeys}");
     }
