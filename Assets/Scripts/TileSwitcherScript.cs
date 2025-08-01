@@ -9,11 +9,15 @@ public class TileSwitcherScript : MonoBehaviour
     private int currentIndex = 0;
 	public float countdownTime = 5f;
     public static event System.Action OnCountdownFinishedEvent; // Event to notify when countdown finishes
-
+    
+    public AudioClip alertSound;
+    private AudioSource audioSource;
+    
     public float TimerRemaining { get; private set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         EnableOnly(currentIndex);
 		StartCoroutine(CountdownLoop());
     }
@@ -67,6 +71,7 @@ public class TileSwitcherScript : MonoBehaviour
 
 	void OnCountdownFinished()
     {
+        audioSource.PlayOneShot(alertSound);
         currentIndex = (currentIndex + 1) % tilemapObjects.Length;
         OnCountdownFinishedEvent?.Invoke();
         EnableOnly(currentIndex);
